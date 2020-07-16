@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, ImageBackground } from 'react-native';
 import * as Speech from 'expo-speech';
+
 
 export default function App() {
   const [text, setText] = useState('Bem vindo, Samuel Marques')
@@ -14,17 +15,22 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <TextInput 
+
+
+
+    <ImageBackground source={require('./src/image/back.jpg')}
+      style={styles.container}>
+      <TextInput
         style={styles.input}
-        onChangeText={ e => setText(e)}
-        placeholder="digite algo..."
-        />
-      <Button
-        title="Falar :)"
+        onChangeText={e => setText(e)}
+        placeholder="DIGITE ALGO..."
+      />
+      <Button 
+        style={styles.btn}
+        title="clica aqui"
         onPress={speak}
       />
-    </View>
+    </ImageBackground>
   );
 }
 
@@ -35,17 +41,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
 
   },
-  input:{
-    
+  input: {
+    marginTop: 80,
+    backgroundColor: '#FFF',
+    textAlign: 'center',
     width: '90%',
     height: 50,
     borderEndWidth: 1,
-    borderColor: '#121212',
+    borderColor: '#000',
     borderRadius: 10,
     padding: 10,
-    margin: 10,
+    margin: 20,
     color: '#000',
     fontSize: 20,
+  },
+  btn:{
+    backgroundColor: '#121212',
+    borderColor: '#000',
+    borderRadius: 10,
+    
   }
 })
 
