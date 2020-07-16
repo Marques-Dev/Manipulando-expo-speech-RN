@@ -18,14 +18,14 @@ export default function App() {
 
 
 
-    <ImageBackground source={require('./src/image/back.jpg')}
+    <ImageBackground source={require('./src/image/back1.jpg')}
       style={styles.container}>
       <TextInput
         style={styles.input}
         onChangeText={e => setText(e)}
         placeholder="DIGITE ALGO..."
       />
-      <Button 
+      <Button
         style={styles.btn}
         title="clica aqui"
         onPress={speak}
@@ -55,11 +55,10 @@ const styles = StyleSheet.create({
     color: '#000',
     fontSize: 20,
   },
-  btn:{
+  btn: {
     backgroundColor: '#121212',
     borderColor: '#000',
     borderRadius: 10,
-    
   }
 })
 
